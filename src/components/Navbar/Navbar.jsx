@@ -25,7 +25,7 @@ const Navbar = () => {
           badgeContent={cartCount}
           sx={{
             '& .MuiBadge-badge': {
-              backgroundColor: '#FCCD2A', // Badge color for now were using yellow
+              backgroundColor: '#EEB902', // Badge color for now were using yellow
             },
           }}
           invisible={cartCount === 0} // Hide badge if cart is empty
