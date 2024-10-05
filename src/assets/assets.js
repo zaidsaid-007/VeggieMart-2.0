@@ -25,6 +25,9 @@ import fruits from './fruits.jpeg';
 import vegetables from './vegetables.jpeg';
 import herbs_spices from './herbs_spices.jpg';
 import legumes from './legumes.jpg'
+import nuts from './nuts.jpg'
+import  tubers from './tubers.jpg'
+import AnimalProducts from './AnimalProducts.jpeg'
 
 export const assets = {
     logo,
@@ -67,8 +70,20 @@ export const explore_list = [
         img: herbs_spices,
         title: 'Aromatic Herbs & Spices'
     },
-    {
-        img: legumes,
-        title: 'Wholesome Legumes & Pulses'
-    }
+    // {
+    //     img: legumes,
+    //     title: 'Wholesome Legumes & Pulses'
+    // },
+    // {
+    //     img: nuts.jpg, // Add the corresponding image path for nuts and seeds
+    //     title: 'Nourishing Nuts & Seeds'
+    // },
+    // {
+    //     img: tubers.jpg, // Add the corresponding image path for tubers
+    //     title: 'Earthy Tubers & Roots'
+    // },
+    // {
+    //     img: AnimalProducts.jpeg, // Add the corresponding image path for animal products
+    //     title: 'Premium Animal Products'
+    // }
 ];

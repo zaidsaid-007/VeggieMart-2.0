@@ -1,4 +1,4 @@
-import { Router, Routes,Route } from 'react-router-dom'
+import {  Routes,Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
