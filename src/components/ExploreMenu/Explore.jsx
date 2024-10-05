@@ -21,6 +21,7 @@ const Explore = () => {
           );
         })}
       </div>
+      <hr/>
     </div>
   );
 };
