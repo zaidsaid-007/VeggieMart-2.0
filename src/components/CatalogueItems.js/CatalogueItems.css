@@ -1,0 +1,122 @@
+
+.catalogue_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #EAEAEA; /* Optional: border for visual separation */
+    border-radius: 15px; /* Optional: rounded corners */
+    overflow: hidden; /* Ensures no overflow */
+    margin: auto; /* Space between items */
+    width: 100%; /* Set a reasonable width */
+    height: 350px; /* Set a reasonable height */
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for some depth */
+    transition: 3.0s; 
+    animation: fadeIn 1s;
+}
+
+.catalogue_items_img_container {
+    position: relative; /* Allows absolute positioning of icons */
+    width: 100%; /* Ensure the container uses full width */
+    height: 60%; /* Set height for the image container */
+    overflow: hidden; /* Prevents overflow */
+}
+
+.catalogue-item-image {
+    width: 100%; /* Image takes full width */
+    height: 100%; /* Image takes full height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+}
+
+.add, .remove {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a slight background for visibility */
+    padding: 5px;
+    border-radius: 50%; /* Round buttons */
+    width: 24px; /* Adjust size */
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure the icons appear on top of the image */
+    transition: background-color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.cat-item-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: for better visibility */
+    padding: 5px 8px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.cat-item-counter p {
+    margin: 0 10px; /* Add space around the number */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add and Remove Buttons when itemCount > 0 */
+.add.active {
+    background-color: rgba(161, 228, 77, 0.8); /* Green when active */
+}
+
+.remove.active {
+    background-color: rgba(255, 53, 98, 0.8); /* Red when active */
+}
+
+.remove {
+    margin-right: 5px; /* Space between remove button and number */
+}
+
+.add {
+    margin-left: 5px; /* Space between add button and number */
+}
+
+/* Ensure the add button is positioned when no item count */
+.add-only {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.catalogue_items_details {
+    padding: 10px; /* Add some padding for text */
+    text-align: left; /* Left align the text */
+    width: 100%; /* Ensure the details take the full width */
+}
+
+.catalogue-item-header {
+    display: flex;
+    justify-content: space-between; /* Space out name and rating icon */
+    align-items: center; /* Vertically align items */
+}
+
+.catalogue-item-name {
+    font-size: 20px;
+    font-weight: bold; /* Bold for the name */
+    margin: 0; /* Reset margin for p tags */
+}
+
+.catalogue-item-rating {
+    color: #EEB902; /* Optional: color for the rating icon */
+}
+
+.cat-item-desc {
+    font-size: 14px; /* Font size for description */
+    color: #666; /* Optional: color for the description */
+    margin: 5px 0; /* Add some margin */
+}
+
+.cat-item-price {
+    font-weight: bold; /* Make price stand out */
+    text-align: right; /* Align price to the right */
+    margin-top: auto; /* Push price to the bottom */
+    color: #EEB902;
+}
