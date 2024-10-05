@@ -16,6 +16,15 @@ import vegetables_category from './vegetables_category.jpg';
 import meat_category from './meat_category.jpg';
 import juices_category from './juices_category.jpg';
 import logo from './logo.png';
+import header2 from './header2.jpg';
+import header3 from './header3.jpg';
+import header4 from './header4.jpg';
+import header5 from './header5.jpg';
+import dairyproducts from './dairyproducts.jpg';
+import fruits from './fruits.jpeg';
+import vegetables from './vegetables.jpeg';
+import herbs_spices from './herbs_spices.jpg';
+import legumes from './legumes.jpg'
 
 export const assets = {
     logo,
@@ -35,5 +44,31 @@ export const assets = {
     fruits_category,
     vegetables_category,
     meat_category,
-    juices_category
+    juices_category,
+    header2,
+    header3,
+    header4,
+    header5,
 }
+export const explore_list = [
+    {
+        img: dairyproducts,
+        title: 'Delightful Dairy Essentials'
+    },
+    {
+        img: fruits,
+        title: 'Juicy Fresh Fruits Galore'
+    },
+    {
+        img: vegetables,
+        title: 'Crisp Organic Veggie Harvest'
+    },
+    {
+        img: herbs_spices,
+        title: 'Aromatic Herbs & Spices'
+    },
+    {
+        img: legumes,
+        title: 'Wholesome Legumes & Pulses'
+    }
+];

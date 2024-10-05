@@ -1,0 +1,46 @@
+.header{
+    height: 34vw;
+    margin: 30px;
+    background: url('/header3.jpg') no-repeat;
+    border-radius: 20px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.contents{
+    font-family: Outfit;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 5%;
+    left: 6vw;
+    animation: fadeIn 3s;
+    background: rgba(0, 0, 0, 0.5); /* Translucent black background */
+    padding: 2vw; /* Add padding for a better border */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+.contents h2{
+    font-weight: 500;
+    color: #EAEAEA; /*Platinum color*/
+    font-size: max(4.5vw ,22px );
+
+}
+.contents p{
+    font-weight: 300;
+    color: #EAEAEA; /*Platinum color*/
+    font-size: max(1vw ,14px );
+}
+.contents button{
+    border : none;
+    color: #0D1B2A;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: #EAEAEA;
+    font-size: max(1vw,13px);
+    border-radius: 50px;
+
+
+}
