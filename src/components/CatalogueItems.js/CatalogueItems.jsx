@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './CatalogueItems.css';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
@@ -7,20 +6,22 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 const CatalogueItems = ({ id, name, price, description, image }) => {
     const [itemCount, setItemCount] = useState(0);
-
+    
     return (
         <div className='catalogue_items'>
             <div className='catalogue_items_img_container'>
                 <img className='catalogue-item-image' src={image} alt={name} />
-                {!itemCount ? (
-                    <AddIcon className='add add-only' onClick={() => setItemCount(prev => prev + 1)} />
-                ) : (
-                    <div className='cat-item-counter'>
-                        <RemoveIcon className='remove' onClick={() => setItemCount(prev => prev - 1)} />
-                        {itemCount > 0 && <p>{itemCount}</p>}
+                <div className={`cat-item-counter ${itemCount === 0 ? 'zero' : 'active'}`}>
+                    {!itemCount ? (
                         <AddIcon className='add' onClick={() => setItemCount(prev => prev + 1)} />
-                    </div>
-                )}
+                    ) : (
+                        <>
+                            <RemoveIcon className='remove' onClick={() => setItemCount(prev => prev - 1)} />
+                            <p>{itemCount}</p>
+                            <AddIcon className='add' onClick={() => setItemCount(prev => prev + 1)} />
+                        </>
+                    )}
+                </div>
             </div>
             <div className='catalogue_items_details'>
                 <div className='catalogue-item-header'>
@@ -32,7 +33,5 @@ const CatalogueItems = ({ id, name, price, description, image }) => {
             </div>
         </div>
     );
-};
-
-export default CatalogueItems;
-
+}
+export default CatalogueItems
