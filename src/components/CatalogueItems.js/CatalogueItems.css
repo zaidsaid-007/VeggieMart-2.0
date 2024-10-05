@@ -78,6 +78,23 @@
     margin-left: 5px; /* Space between add button and number */
 }
 
+.add-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5); /* Slightly opaque background */
+    border-radius: 50%; /* Make it circular */
+    padding: 5px; /* Padding around the icon */
+}
+
+.add-only {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
 /* Ensure the add button is positioned when no item count */
 .add-only {
     position: absolute;

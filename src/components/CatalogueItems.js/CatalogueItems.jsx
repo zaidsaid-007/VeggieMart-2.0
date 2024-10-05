@@ -13,7 +13,7 @@ const CatalogueItems = ({ id, name, price, description, image }) => {
                 <img className='catalogue-item-image' src={image} alt={name} />
                 
                 {itemCount === 0 ? (
-                    <AddIcon className='add-only' onClick={() => setItemCount(prev => prev + 1)} />
+                    <AddIcon className='add-only add-icon' onClick={() => setItemCount(prev => prev + 1)} />
                 ) : (
                     <div className='cat-item-counter'>
                         <RemoveIcon 
