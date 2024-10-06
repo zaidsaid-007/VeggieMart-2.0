@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
 import './CatalogueItems.css';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { StoreContext } from '../../context/Storecontext';
 
 const CatalogueItems = ({ id, name, price, description, image }) => {
-    const [itemCount, setItemCount] = useState(0);
+    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
     return (
         <div className='catalogue_items'>
             <div className='catalogue_items_img_container'>
                 <img className='catalogue-item-image' src={image} alt={name} />
-                
-                {itemCount === 0 ? (
-                    <AddIcon className='add-only add-icon' onClick={() => setItemCount(prev => prev + 1)} />
+
+                {!cartItems[id] ? (
+                    <AddIcon className='add-only' onClick={() => addToCart(id)} />
                 ) : (
                     <div className='cat-item-counter'>
                         <RemoveIcon 
-                            className={`remove active`} 
-                            onClick={() => setItemCount(prev => prev - 1)} 
+                            className='remove active' // Ensure the correct class is applied
+                            onClick={() => removeFromCart(id)} 
                         />
-                        <p>{itemCount > 0 ? itemCount : ''}</p>
+                        <p>{cartItems[id]}</p> {/* Display the count of items */}
                         <AddIcon 
-                            className={`add active`} 
-                            onClick={() => setItemCount(prev => prev + 1)} 
+                            className='add active' // Ensure the correct class is applied
+                            onClick={() => addToCart(id)} 
                         />
                     </div>
                 )}

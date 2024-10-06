@@ -129,37 +129,38 @@ export const assets = {
 export const explore_list = [
     {
         img: dairyproducts,
-        title: 'Delightful Dairy Essentials'
+        title: 'Dairy Products'
     },
     {
         img: fruits,
-        title: 'Juicy Fresh Fruits Galore'
+        title: 'Fruits'
     },
     {
         img: vegetables,
-        title: 'Crisp Organic Veggie Harvest'
+        title: 'Vegetables'
     },
     {
         img: herbs_spices,
-        title: 'Aromatic Herbs & Spices'
+        title: 'Herbs & Spices'
     },
     {
         img: legumes,
-        title: 'Wholesome Legumes & Pulses'
+        title: 'Legumes'
     },
     {
         img: nuts, 
-        title: 'Nourishing Nuts & Seeds'
+        title: 'Nuts & Seeds'
     },
     {
         img: tubers,
-        title: 'Earthy Tubers & Roots'
+        title: 'Tubers & Roots'
     },
     {
         img: animalProducts, 
-        title: 'Premium Animal Products'
+        title: 'Animal Products'
     }
 ];
+
 
 export const catalogue = [
     {

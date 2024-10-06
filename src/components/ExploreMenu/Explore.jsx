@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './Explore.css';
 import { explore_list } from '../../assets/assets';
 
+// Array of objects representing the categories to be displayed in the explore section
+//TODO: Bug fixes
+
 const Explore = () => {
     const [category, setCategory] = useState('All'); // State managed internally
 

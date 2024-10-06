@@ -101,6 +101,9 @@
     bottom: 10px;
     right: 10px;
     z-index: 2;
+    background-color: rgba(255, 255, 255, 0.432); /* Slightly opaque background */
+    border-radius: 50%; /* Make it circular */
+    padding: 5px;
 }
 
 .catalogue_items_details {
