@@ -61,9 +61,12 @@ import watermelon from './watermelon.jpg';
 import white_onions from './white_onions.jpg';
 import yellow_bellpapers from './Yellow_bellpapers.jpg';
 import animalProducts from './AnimalProducts.jpeg';
+import appstore from './appstore.jpeg';
+import playstore from './playstore.jpeg';
 
 export const assets = {
     logo,
+    appstore,
     apples,
     apricots,
     bananas,
@@ -108,6 +111,7 @@ export const assets = {
     pears,
     peas,
     pineapple,
+    playstore,
     potatoes,
     prawns,
     react,
