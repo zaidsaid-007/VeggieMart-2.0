@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
   }
   
   .app-download-links img {
@@ -37,4 +38,3 @@
   .app-download-links img:hover {
     transform: scale(1.1);
   }
-  

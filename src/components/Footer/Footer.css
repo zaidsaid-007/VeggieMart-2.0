@@ -95,7 +95,7 @@
 }
 
 .news-letter button:hover {
-    background-color: #004F2D;
+    background-color: #b46600;
 }
 
 .copyright {
@@ -109,6 +109,9 @@
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
     }
 
     .footer-content-left, .footer-content-right, .footer-content-center {

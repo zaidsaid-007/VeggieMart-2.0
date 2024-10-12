@@ -1,61 +1,82 @@
+/* Navbar container */
 .navbar {
-    padding: 20px 0px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    width: 100px;
-}
-
-.menu {
+    position: relative;
+    width: 100%;
+  
+  }
+  
+  .logo {
+    width: 140px;
+  }
+  
+  .menu {
     display: flex;
     list-style: none;
-    gap: 20px;
-    color: #0D1B2A; /*Text Color Scheme*/
-}
-
-.navbar-right {
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #0D1B2A;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  
+  /* Active menu item underline */
+  .menu a.active {
+    border-bottom: 2px solid #0D1B2A;
+  }
+  
+  /* Menu hover effect */
+  .menu a:hover {
+    color: #EEB902;
+  }
+  
+  .navbar-right {
     display: flex;
-    gap: 40px;
     align-items: center;
-}
-
-.navbar button {
+    gap: 30px;
+  }
+  
+  .Navbar-Search-Icon button {
     background: transparent;
     font-size: 16px;
     border: 1px solid #0D1B2A;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-}
-
-.navbar button:hover {
+  }
+  
+  .Navbar-Search-Icon button:hover {
     background: #F4FFF8;
     color: #0D1B2A;
-}
-
-.navbar .menu li.active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #0D1B2A;
-}
-
-.navbar li {
-    cursor: pointer;
-}
-
-.Navbar-Search-Icon {
-    position: relative;
-}
-
-.Navbar-Search-Icon .dot {
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: #EEB902;
-    border-radius: 5px;
-    top: calc(14px);
-    right: calc(130px);
-}
+  }
+  
+  /* Responsive: screens up to 768px */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .menu {
+      flex-direction: column;
+      gap: 15px;
+      display: none;
+    }
+  
+    .navbar .menu.show {
+      display: flex;
+    }
+  
+    .navbar-right {
+      gap: 10px;
+    }
+  }
+  

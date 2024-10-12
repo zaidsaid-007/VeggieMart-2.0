@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 34vw;
     margin: 30px;
     background: url('/header3.jpg') no-repeat;
@@ -7,7 +7,8 @@
     position: relative;
     overflow: hidden;
 }
-.contents{
+
+.contents {
     font-family: Outfit;
     position: absolute;
     display: flex;
@@ -22,25 +23,90 @@
     padding: 2vw; /* Add padding for a better border */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
-.contents h2{
-    font-weight: 500;
-    color: #EAEAEA; /*Platinum color*/
-    font-size: max(4.5vw ,22px );
 
+.contents h2 {
+    font-weight: 500;
+    color: #EAEAEA; /* Platinum color */
+    font-size: max(4.5vw, 22px);
 }
-.contents p{
+
+.contents p {
     font-weight: 300;
-    color: #EAEAEA; /*Platinum color*/
-    font-size: max(1vw ,14px );
+    color: #EAEAEA; /* Platinum color */
+    font-size: max(1vw, 14px);
 }
-.contents button{
-    border : none;
+
+.contents button {
+    border: none;
     color: #0D1B2A;
     font-weight: 500;
     padding: 1vw 2.3vw;
     background-color: #EAEAEA;
-    font-size: max(1vw,13px);
+    font-size: max(1vw, 13px);
     border-radius: 50px;
+}
 
+@media (max-width: 1200px) {
 
+    .contents {
+        max-width: 60%;
+        left: 5vw;
+        padding: 2.5vw;
+    }
+    .contents h2 {
+        font-size: max(5vw, 20px);
+    }
+    .contents p {
+        font-size: max(1.5vw, 13px);
+    }
+    .contents button {
+        padding: 1.5vw 3vw;
+        font-size: max(1.5vw, 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 50vw;
+        margin: 20px;
+    }
+    .contents {
+        max-width: 70%;
+        left: 4vw;
+        padding: 3vw;
+    }
+    .contents h2 {
+        font-size: max(6vw, 18px);
+    }
+    .contents p {
+        font-size: max(2vw, 12px);
+        display: none;
+    }
+    .contents button {
+        padding: 2vw 4vw;
+        font-size: max(2vw, 12px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60vw;
+        margin: 10px;
+    }
+    .contents {
+        max-width: 90%;
+        left: 2vw;
+        padding: 4vw;
+    }
+    .contents h2 {
+        font-size: max(8vw, 16px);
+    }
+    .contents p {
+        font-size: max(3vw, 10px);
+        display: none;
+    }
+    .contents button {
+        padding: 3vw 5vw;
+        font-size: max(3vw, 10px);
+    }
 }
