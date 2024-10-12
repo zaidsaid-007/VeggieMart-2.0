@@ -26,7 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #0D1B2A;
+    color: #004F2D;
 }
 
 .form-inputs {
@@ -51,7 +51,26 @@
     cursor: pointer;
 }
 
-p {
+span{
+    color: #004F2D;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.popup-condition{
+    display: flex;
+    align-items: start;
+    gap:8px;
+    margin-top: -15px;
+}
+
+.popup-condition input{
+    margin-top: 5px ;
+}
+
+.popup-condition p span{
+    color: #004F2D;
+    font-weight: 500;
     cursor: pointer;
 }
 
