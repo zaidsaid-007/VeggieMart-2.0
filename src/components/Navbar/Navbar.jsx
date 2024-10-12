@@ -6,7 +6,9 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+
+const Navbar = ({setShowLogin}) => {
+
   const [menu, setMenu] = useState("Home"); // Track the active menu item
   const [cartCount, setCartCount] = useState(1); // Example state for cart items count
 
@@ -47,7 +49,7 @@ const Navbar = () => {
 
         {/* Sign-In Button */}
         <div className='Navbar-Search-Icon'>
-          <button>Sign In</button>
+          <button onClick={()=>setShowLogin(true)}>Sign In</button>
         </div>
       </div>
     </div>
