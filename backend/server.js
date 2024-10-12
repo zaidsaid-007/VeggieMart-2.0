@@ -18,6 +18,7 @@ connectDB();
 //api endpoints
 
 app.use("/api/catalogue", catalogueRouter)
+app.use("/images",express.static("Uploads"))
 
 app.get("/",(req,res)=>{
     res.send("API Working")
