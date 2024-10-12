@@ -1,5 +1,5 @@
 import express  from 'express';
-import { addCatalogue } from '../Controllers/catalogueController.js';
+import { addCatalogue, listCatalogue, removeCatalogue } from '../Controllers/catalogueController.js';
 import multer from 'multer';
 
 const catalogueRouter = express.Router();
@@ -16,6 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage})
 
 catalogueRouter.post("/add",upload.single("image"),addCatalogue)
-
+catalogueRouter.get("/list",listCatalogue)
+catalogueRouter.post("/remove",removeCatalogue)
 
 export default catalogueRouter;
