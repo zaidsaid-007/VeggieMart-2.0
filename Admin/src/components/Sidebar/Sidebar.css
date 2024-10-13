@@ -1,0 +1,41 @@
+.sidebar{
+    width : 18%;
+    min-height: 100vw;
+    border: 1.5px solid #a9a9a9 ;
+    border-top: 0;
+    font-size: maxc(1vw, 10px);
+}
+.sidebar-options{
+    padding-top: 50px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sidebar-option{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid #a9a9a9;
+    cursor: pointer;
+    border-right: 0;
+    border-radius: 3px 0px 0px 3px;
+
+}
+.sidebar-option img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 900px) {
+    .sidebar-option{
+        display:none;
+    }
+}
+.sidebar-option.active{
+    background-color:#EAEAEA ;
+    border-color: #004F2D;
+}
+
+/*ToDo : MAke Rsponsive*/
