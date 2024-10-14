@@ -137,7 +137,7 @@ export const explore_list = [
     },
     {
         img: fruits,
-        title: 'Fruits'
+        title: 'Fresh Fruits'
     },
     {
         img: vegetables,

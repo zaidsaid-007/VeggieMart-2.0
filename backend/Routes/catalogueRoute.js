@@ -8,7 +8,10 @@ const catalogueRouter = express.Router();
 
 
 const storage = multer.diskStorage({
-    filename:(req, file, cb) => {
+    destination: (req, file, cb) => {
+        cb(null, 'Uploads/')
+    },
+    filename: (req, file, cb) => {
         return cb(null, `${Date.now()}${file.originalname}`)
     }
 })
