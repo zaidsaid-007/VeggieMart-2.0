@@ -3,8 +3,8 @@ import './List.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const List = () => {
-  const url = 'http://localhost:4000'; // Ensure this points to your backend
+const List = ({url}) => {
+
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
@@ -31,7 +31,7 @@ const List = () => {
 
       if (response.status === 200) {
         toast.success('Item deleted successfully');
-        fetchList(); // Refetch the list after deletion
+        await fetchList(); // Refetch the list after deletion
       } else {
         toast.error('Error deleting item');
       }
