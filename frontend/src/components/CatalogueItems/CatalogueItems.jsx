@@ -6,12 +6,12 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { StoreContext } from '../../context/Storecontext';
 
 const CatalogueItems = ({ id, name, price, description, image }) => {
-    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+    const { cartItems, addToCart, removeFromCart,url } = useContext(StoreContext);
 
     return (
         <div className='catalogue_items'>
             <div className='catalogue_items_img_container'>
-                <img className='catalogue-item-image' src={image} alt={name} />
+                <img className='catalogue-item-image' src={url+'/images/'+image} alt={name} />
 
                 {!cartItems[id] ? (
                     <AddIcon className='add-only' onClick={() => addToCart(id)} />

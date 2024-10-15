@@ -6,50 +6,43 @@ import validator from "validator";
 //login User
 
 const loginUser = async (req, res) => {
-    const { email, password, name } = req.body;
+  const { email, password } = req.body; // Removed name from destructuring
 
-    if (!validator.isEmail(email)) {
-        return res.status(400).json({ message: "Invalid email" });
-    }
+  // Validate email format
+  if (!validator.isEmail(email)) {
+      return res.status(400).json({ message: "Invalid email" });
+  }
 
-    if (!validator.isLength(password, { min: 6 })) {
-        return res
-            .status(400)
-            .json({ message: "Password must be at least 6 characters long" });
-    }
+  // Validate password length
+  if (!validator.isLength(password, { min: 6 })) {
+      return res.status(400).json({ message: "Password must be at least 6 characters long" });
+  }
 
-    if (!validator.isLength(name, { min: 2 })) {
-        return res
-            .status(400)
-            .json({ message: "Name must be at least 2 characters long" });
-    }
+  try {
+      // Find user by email
+      const user = await userModel.findOne({ email });
 
-    try {
-        const userByEmail = await userModel.findOne({ email });
+      // Check if user exists
+      if (!user) {
+          return res.status(404).json({ message: "User doesn't exist" });
+      }
 
-        if (!userByEmail) {
-            return res.status(404).json({ message: "User doesn't exist" });
-        }
+      // Compare password with hashed password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+          return res.status(401).json({ message: "Wrong password, try again" });
+      }
 
-        const userByName = await userModel.findOne({ email, name });
+      // Generate JWT token
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+          expiresIn: "1h",
+      });
 
-        if (!userByName) {
-            return res.status(404).json({ message: "Please enter the correct username" });
-        }
-
-        const isMatch = await bcrypt.compare(password, userByName.password);
-
-        if (!isMatch) {
-            return res.status(401).json({ message: "Wrong password, try again" });
-        }
-
-        const token = jwt.sign({ id: userByName._id }, process.env.JWT_SECRET, {
-            expiresIn: "1h",
-        });
-        return res.status(200).json({ token });
-    } catch (error) {
-        return res.status(500).json({ message: "Server error" });
-    }
+      // Respond with token
+      return res.status(200).json({ token });
+  } catch (error) {
+      return res.status(500).json({ message: "Server error" });
+  }
 };
 
 //Register User

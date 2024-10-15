@@ -63,9 +63,16 @@ import yellow_bellpapers from './Yellow_bellpapers.jpg';
 import animalProducts from './AnimalProducts.jpeg';
 import appstore from './appstore.jpeg';
 import playstore from './playstore.jpeg';
+import profileIcon from './profileIcon.png';
+import logout from './logout.png';
+import cart from './cart.png';
+import carticon from './cart-icon.png';
 
 export const assets = {
     logo,
+    logout,
+    cart,
+    carticon,
     appstore,
     apples,
     apricots,
@@ -114,6 +121,7 @@ export const assets = {
     playstore,
     potatoes,
     prawns,
+    profileIcon,
     react,
     red_bellpapers,
     red_onions,
