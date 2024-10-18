@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useMemo } from "react";
 
 export const StoreContext = createContext(null);
 
@@ -10,24 +10,30 @@ const StoreContextProvider = (props) => {
   const [catalogue, setCatalogue] = useState([]);
 
   const addToCart = (itemId) => {
-    if (!cartItems[itemId]) {
-      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-    } else {
-      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    }
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + 1,
+    }));
+    console.log("Item added to cart:", itemId); // Debugging: Log the item added to cart
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: prev[itemId] > 1 ? prev[itemId] - 1 : 0,
+    }));
+    console.log("Item removed from cart:", itemId); // Debugging: Log the item removed from cart
   };
 
-  const getTotalCartAmount = () => {
+
+
+  const getTotalCart = () => {
     let totalAmount = 0;
-    for (const itemId in cartItems) {
-      if (cartItems[itemId] > 0) {
-        let itemInfo = catalogue.find((item) => item.id === itemId);
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = catalogue.find((catalogueItem) => catalogueItem._id === item);
         if (itemInfo) {
-          totalAmount += itemInfo.price * cartItems[itemId];
+          totalAmount += itemInfo.price * cartItems[item];
         }
       }
     }
@@ -37,16 +43,11 @@ const StoreContextProvider = (props) => {
   const fetchCatalogue = async () => {
     try {
       const response = await axios.get(`${url}/api/catalogue/list`);
-      console.log("API Response:", response.data); // Debugging: Log the API response
       setCatalogue(response.data);
     } catch (error) {
       console.error("Error fetching catalogue:", error);
     }
   };
-
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
 
   useEffect(() => {
     console.log("Component mounted, fetching data...");
@@ -70,10 +71,10 @@ const StoreContextProvider = (props) => {
     setCartItems,
     addToCart,
     removeFromCart,
-    getTotalCartAmount,
     url,
     token,
     setToken,
+    getTotalCart,
   };
 
   return (

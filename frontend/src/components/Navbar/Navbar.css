@@ -125,3 +125,10 @@
     gap: 10px;
     cursor: pointer;
   }
+  .cart-icon{
+    width: 25px;
+    height: 25px;
+    object-fit: fill;
+    cursor: pointer;
+    margin-right: 10px;
+  }

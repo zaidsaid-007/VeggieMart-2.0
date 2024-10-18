@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Explore.css';
 import { explore_list } from '../../assets/assets';
+import { StoreContext } from '../../context/Storecontext';
+
 
 // Array of objects representing the categories to be displayed in the explore section
 //TODO: Bug fixes
 
 const Explore = () => {
-    const [category, setCategory] = useState('All'); // State managed internally
+    const [category, setCategory] = useState('All');
+    const { catalogue } = useContext(StoreContext);
 
     return (
         <div className='explore' id='explore-catalogue'>
