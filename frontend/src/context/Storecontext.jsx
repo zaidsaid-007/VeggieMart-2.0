@@ -20,14 +20,14 @@ const StoreContextProvider = (props) => {
       await axios.post(url+'/api/cart/add',{itemId},{headers:{token}})
     }
   };
-//todo Doesnt work
+
   const removeFromCart = async (itemId) => {
     setCartItems((prev)=> ({...prev,[itemId]: prev[itemId] - 1,}))
     if (token){
       await axios.post(url+'/api/cart/remove',{itemId},{headers:{token}})
   }
 }
-// todo end of todo
+
 
 
   const getTotalCart = () => {
