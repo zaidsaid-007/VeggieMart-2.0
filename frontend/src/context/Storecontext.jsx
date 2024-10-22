@@ -52,13 +52,27 @@ const StoreContextProvider = (props) => {
     }
   };
 
+  const loadCartData = async (token) => {
+    try {
+        const response = await axios.get(url + "/api/cart/get", {
+            headers: { token },
+        });
+        console.log("Cart Data Response:", response.data); // Check what the response contains
+        setCartItems(response.data); // Update state with the fetched cart data
+    } catch (error) {
+        console.error("Error loading cart data:", error);
+    }
+};
+
+
   useEffect(() => {
     console.log("Component mounted, fetching data...");
     async function loadData() {
       await fetchCatalogue();
       const storedToken = localStorage.getItem("token");
-      if (storedToken) {
+      if (localStorage.getItem("token")) {
         setToken(storedToken);
+        await loadCartData(localStorage.getItem("token"));
       }
     }
     loadData();
